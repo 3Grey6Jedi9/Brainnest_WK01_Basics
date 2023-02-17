@@ -1,21 +1,28 @@
 
-strlist = ["r","1.2",'d','2.3','a']
-j = 0
-new = []
-for i in strlist:
+def func3(intlist):
     try:
-        new.append(float(i))
-    except ValueError:
-        print(f'Impossible to convert the value "{i}" with the index {j} into a float')
-        j +=1
-        continue
+        for n in intlist:
+            if type(n) is not int:
+                raise TypeError('Only integers please')
+    except TypeError as err:
+        print(f'{err}')
     else:
-        j +=1
+        return max(intlist)
 
-print(new)
 
-for n in strlist:
-    print(type(n), strlist)
+a = func3([1,2,3,2.3])
+
+print(a)
+
+
+
+
+
+
+
+
+
+
 
 
 
