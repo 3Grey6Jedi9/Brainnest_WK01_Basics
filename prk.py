@@ -1,10 +1,14 @@
-import math
+def func(filename):
+    with open(filename, "r") as file:
+        return file.read()
 
-number = math.gcd(23)
 
-num = math.gcd(4)
+try:
+    print(func("apple"))
+except FileNotFoundError:
+    print('The file was not found, please verify that you entered the right path')
 
-print(num, number)
+
 
 
 
