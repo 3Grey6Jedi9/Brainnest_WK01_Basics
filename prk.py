@@ -1,12 +1,23 @@
-def func(filename):
-    with open(filename, "r") as file:
-        return file.read()
+
+strlist = ["r","1.2",'d','2.3','a']
+j = 0
+new = []
+for i in strlist:
+    try:
+        new.append(float(i))
+    except ValueError:
+        print(f'Impossible to convert the value "{i}" with the index {j} into a float')
+        j +=1
+        continue
+    else:
+        j +=1
+
+print(new)
+
+for n in strlist:
+    print(type(n), strlist)
 
 
-try:
-    print(func("apple"))
-except FileNotFoundError:
-    print('The file was not found, please verify that you entered the right path')
 
 
 
