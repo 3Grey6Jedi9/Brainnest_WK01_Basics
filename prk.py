@@ -1,18 +1,24 @@
-
-def func3(intlist):
-    try:
-        for n in intlist:
-            if type(n) is not int:
-                raise TypeError('Only integers please')
-    except TypeError as err:
-        print(f'{err}')
-    else:
-        return max(intlist)
+def func2(diclist):
+    val = []
+    key = input('Tell me the dictionary key you want check')
+    for dict in diclist:
+        val.append(dict[key])
+    return val
 
 
-a = func3([1,2,3,2.3])
 
-print(a)
+dict1 = {'a':1,'b':3, 'c':4}
+
+dict2 = {'d':3,'a':1,'c':3}
+
+dict3 = {'a':90,'x':90,'b':2}
+
+
+
+try:
+    print(func2([dict1, dict2, dict3]))
+except KeyError:
+    print('You must enter a key that exists in all the dictionaries')
 
 
 
